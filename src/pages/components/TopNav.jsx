@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 function TopNav() {
   return (
     <div claaName="my-3">
-      <ul className="app">
+      <ul className="flex gap-4">
         <li>
           <MyLink to="/accounts/Login">로그인</MyLink>
         </li>
@@ -21,11 +21,7 @@ function MyLink({ to, children }) {
   return (
     <Link
       to={to}
-      className="pb-1 text-gray-500 
-      hover:text-red-500 
-      hover:border-b-4 
-      border red-500
-      ;"
+      className="pb-1 text-gray-500 hover:text-red-500 hover:border-red-500 border-b-4"
     >
       {children}
     </Link>
