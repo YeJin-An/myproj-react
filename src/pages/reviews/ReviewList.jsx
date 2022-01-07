@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 function PageReviewList() {
   const [loading, setLoading] = useState(false);
-  const [srror, setError] = useState(null);
+  const [error, setError] = useState(null);
   const [reviewList, setReviewList] = useState([]);
 
   useEffect(() => {
@@ -29,6 +29,9 @@ function PageReviewList() {
         setLoading(false);
       })
 
+      const deleteReview = (deletingReview)=> {
+        console.log('Deleting', deletingReview);
+      };
   return (
     <>
       <h2>Review List</h2>
