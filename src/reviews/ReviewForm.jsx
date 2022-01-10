@@ -3,7 +3,7 @@ import Axios from 'axios';
 import DebugStates from 'components/DebugStates';
 import ReviewForm from 'components/ReviewForm';
 import useFieldValues from 'hooks/useFieldValues';
-import { useState } from 'react/cjs/react.development';
+import { useEffect, useState } from 'react/cjs/react.development';
 
 function PageReviewForm() {
   // 상탯값 정의. 훅 호출
@@ -11,17 +11,38 @@ function PageReviewForm() {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
   const { reviewId } = useParams();
-  const { fieldValues, handleFieldChange } = useFieldValues({
-    score: 5,
-    content: '',
-  });
+  const { fieldValues, handleFieldChange, clearFieldValues, setFieldValues } =
+    useFieldValues({
+      score: 5,
+      content: '',
+    });
+
+  useEffect(() => {
+    const fetchReview = async () => {
+      setLoading(true);
+      setError(null);
+
+      const url = `http://localhost:8000/shop/api/reviews/${reviewId}/`;
+      try {
+        const response = await Axios.get(url);
+        setFieldValues(response.data);
+      } catch (e) {
+        setError(e);
+      }
+      setLoading(false);
+    };
+    if (reviewId) fetchReview();
+    else clearFieldValues();
+  }, [reviewId]);
 
   // 다양한 함수를 정의
   const saveReview = async () => {
     setLoading(true);
     setError(null);
 
-    const url = 'http://localhost:8000/shop/api/reviews/';
+    const url = !reviewId
+      ? 'http://localhost:8000/shop/api/reviews/'
+      : `http://localhost:8000/shop/api/reviews/${reviewId}/`;
     try {
       await Axios.post(url, fieldValues);
       navigate('/reviews/');
