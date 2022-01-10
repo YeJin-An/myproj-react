@@ -16,6 +16,9 @@ function TopNav() {
         <li>
           <MyLink to="/examples/Components">Components</MyLink>
         </li>
+        <li>
+          <MyLink to="/reviews/new">리뷰</MyLink>
+        </li>
       </ul>
     </div>
   );

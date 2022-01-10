@@ -1,11 +1,13 @@
 import Axios from 'axios';
 import DebugStated from 'pages/components/DebugStates';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function PageReviewList() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [reviewList, setReviewList] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     refetch();
@@ -13,7 +15,7 @@ function PageReviewList() {
 
   const refetch = () => {
   setLoading(true);
-  setError(true);
+  setError(null);
 
     const url = 'http://127.0.0.1:8000/shop/review/';
     // Promise 객체
@@ -22,9 +24,9 @@ function PageReviewList() {
         setReviewList(data);
       })
       .catch((error) => {
-        console.group('에러 응답');
+       
         console.error(error);
-        console.groupEnd();
+      
       }).finally(()=> {
         setLoading(false);
       })
@@ -38,6 +40,8 @@ function PageReviewList() {
 
       {loading && <div>Loading ...</div>}
       {error && <div>동신 중에 오류가 발생했습니다.</div>}
+
+      <button onClick={()=>{}}></button>
 
       <button onClick={()=> refetch()}classNAme="bg-yellow-400 hover:bg-red-600"></button>
       
