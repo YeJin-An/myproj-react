@@ -74,6 +74,7 @@ function ReviewList() {
         <Review
         key={review.id}
         review={review}
+        handleEdit={() => navigate(`/reviews/${review.id}/edit/`)}
         handleDelete={() => deleteReview(review)}
       />
         ))}
