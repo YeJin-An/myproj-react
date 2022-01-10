@@ -44,7 +44,11 @@ function PageReviewForm() {
       ? 'http://localhost:8000/shop/api/reviews/'
       : `http://localhost:8000/shop/api/reviews/${reviewId}/`;
     try {
-      await Axios.post(url, fieldValues);
+      if (!reviewId) {
+        await Axios.post(url, fieldValues);
+      } else {
+        await Axios.put(url, fieldValues);
+      }
       navigate('/reviews/');
     } catch (e) {
       setError(e);
@@ -64,7 +68,7 @@ function PageReviewForm() {
         fieldValues={fieldValues}
         handleFieldChange={handleFieldChange}
         handleSubmit={saveReview}
-        loading={true}
+        loading={loading}
       />
       <DebugStates reviewId={reviewId} fieldValues={fieldValues} />
     </div>
