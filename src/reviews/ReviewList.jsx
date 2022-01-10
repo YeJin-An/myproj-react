@@ -1,5 +1,6 @@
 import Axios from 'axios';
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
+import Review from 'components/Review';
 import DebugStates from 'DebugStates'
 
 function ReviewList() {
@@ -33,8 +34,12 @@ function ReviewList() {
       <h2>Review List</h2>
       {loading && <div>Loading ...</div>}
       {error && <div>통신 중에 오류가 발생했습니다.</div>}
-      <button onClick{()=>refetch()} 
-      className="bg-yellow-400 hover:bg-red-400">새로고침</button>
+      <button onClick{()=>refetch()} className="bg-yellow-400 hover:bg-red-400">새로고침</button>
+      <div className="">
+        {reviewList.map((review) => (
+          <Review key={review.id} review={review} />
+        ))}
+      </div>
       <hr />
       <DebugStates loading={loading} error={error} reviewLsit={reviewList}/>
       <pre>{JSON.stringify(reviewList, null, 2)}</pre>
