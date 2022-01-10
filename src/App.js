@@ -6,6 +6,7 @@ import TopNav from './pages/components/TopNav';
 import Components from 'pages/examples/Components';
 
 import './App.css';
+import PageBlog from 'pages/blog/PageBlog';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/accounts/profile/" element={<Profile />} />
         <Route path="/reviews/" element={<ReviewList />} />
         <Route path="examples.components" element={<Components />} />
+        <Route path="/blog/" element={<PageBlog />} />
       </Routes>
     </div>
   );
