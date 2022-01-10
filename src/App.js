@@ -3,10 +3,11 @@ import Profile from 'pages/accounts/Profile';
 import ReviewList from 'pages/accounts/reviews/ReviewList';
 import Login from 'pages/accounts/Login';
 import TopNav from 'components/TopNav';
+import './App.css';
 
 function App() {
   return (
-    <div>
+    <div className="app">
       <TopNav />
       <Routes>
         <Route path="/accounts/login/" element={<Login />} />
