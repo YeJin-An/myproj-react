@@ -1,5 +1,6 @@
 import Axios from 'axios';
 import {useEffect, useState} from 'react'
+import { useNavigate } from 'react-router-dom';
 import Review from 'components/Review';
 import DebugStates from 'DebugStates'
 
@@ -7,6 +8,7 @@ function ReviewList() {
   const[loading, setLoading] = useState(false);
   const[error, setError] = usestate(null);
   const[reviewList, setReviewList] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(()=>{
     refetch();
@@ -60,7 +62,13 @@ function ReviewList() {
       <h2>Review List</h2>
       {loading && <div>Loading ...</div>}
       {error && <div>통신 중에 오류가 발생했습니다.</div>}
-      <button onClick{()=>refetch()} className="bg-yellow-400 hover:bg-red-400">새로고침</button>
+      <button onClick{()=>refetch()} className="bg-yellow-400 hover:bg-red-400 mr-1">새로고침</button>
+      <button
+        onClick={() => navigate('/reviews/new/')}
+        className="bg-blue-400 hover:bg-slate-400"
+      >
+        새 리뷰
+      </button>
       <div className="">
         {reviewList.map((review) => (
         <Review
