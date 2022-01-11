@@ -1,10 +1,9 @@
 import { useNavigate, useParams } from 'react-router-dom';
-import Axios from 'axios';
 import DebugStates from 'components/DebugStates';
 import ReviewForm from 'components/ReviewForm';
 import useFieldValues from 'hooks/useFieldValues';
 import { useEffect, useState } from 'react/cjs/react.development';
-import { API_HOST } from '../Constants';
+import { axiosInstance } from 'api/base';
 
 function PageReviewForm() {
   // 상탯값 정의. 훅 호출
