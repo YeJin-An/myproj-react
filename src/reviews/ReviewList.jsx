@@ -18,7 +18,7 @@ function ReviewList() {
     setLoading(true);
     setError(null);
 
-    const url = 'http://localhost:8000/shop/api/reviews/';
+    const url = `${API_HOST}/shop/api/reviews/`;
     Axios.get(url)
     .then((({data})=>{
       setReviewList(data);
@@ -34,7 +34,7 @@ function ReviewList() {
 
   const deleteReview = (deletingReview) => {
     const { id: deletingReviewId } = deletingReview;
-    const url = `http://localhost:8000/shop/api/reviews/${deletingReviewId}/`;
+    const url = `${API_HOST}/shop/api/reviews/${deletingReviewId}/`;
 
     setLoading(true);
     setError(null);

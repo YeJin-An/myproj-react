@@ -4,6 +4,7 @@ import DebugStates from 'components/DebugStates';
 import ReviewForm from 'components/ReviewForm';
 import useFieldValues from 'hooks/useFieldValues';
 import { useEffect, useState } from 'react/cjs/react.development';
+import { API_HOST } from '../Constants';
 
 function PageReviewForm() {
   // 상탯값 정의. 훅 호출
@@ -22,7 +23,7 @@ function PageReviewForm() {
       setLoading(true);
       setError(null);
 
-      const url = `http://localhost:8000/shop/api/reviews/${reviewId}/`;
+      const url = `${API_HOST}/shop/api/reviews/${reviewId}/`;
       try {
         const response = await Axios.get(url);
         setFieldValues(response.data);
@@ -41,8 +42,8 @@ function PageReviewForm() {
     setError(null);
 
     const url = !reviewId
-      ? 'http://localhost:8000/shop/api/reviews/'
-      : `http://localhost:8000/shop/api/reviews/${reviewId}/`;
+      ? `${API_HOST}/shop/api/reviews/`
+      : `${API_HOST}/shop/api/reviews/${reviewId}/`;
     try {
       if (!reviewId) {
         await Axios.post(url, fieldValues);
@@ -52,7 +53,7 @@ function PageReviewForm() {
       navigate('/reviews/');
     } catch (e) {
       setError(e);
-      console.error(e);
+      colocnsole.error(e);
     }
     setLoading(false);
   };
