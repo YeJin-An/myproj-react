@@ -7,6 +7,7 @@ import ReviewForm from './components/ReviewForm';
 import Components from 'pages/examples/Components';
 import PageBlog from './pages/PageBlog';
 import './App.css';
+import Clock from 'pages/examples/Clock';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/reviews/new/" element={<ReviewForm />} />
         <Route path="/reviews/:reviewId/edit/" element={<ReviewForm />} />
         <Route path="/examples/components/" element={<Components />} />
+        <Route path="/examples/clock/" element={<Clock />} />
       </Routes>
     </div>
   );

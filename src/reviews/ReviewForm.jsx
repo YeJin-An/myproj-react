@@ -22,9 +22,9 @@ function PageReviewForm() {
       setLoading(true);
       setError(null);
 
-      const url = `${API_HOST}/shop/api/reviews/${reviewId}/`;
+      const url = `/shop/api/reviews/${reviewId}/`;
       try {
-        const response = await Axios.get(url);
+        const response = await axiosInstance.get(url);
         setFieldValues(response.data);
       } catch (e) {
         setError(e);
@@ -41,18 +41,18 @@ function PageReviewForm() {
     setError(null);
 
     const url = !reviewId
-      ? `${API_HOST}/shop/api/reviews/`
-      : `${API_HOST}/shop/api/reviews/${reviewId}/`;
+      ? `/shop/api/reviews/`
+      : `/shop/api/reviews/${reviewId}/`;
     try {
       if (!reviewId) {
-        await Axios.post(url, fieldValues);
+        await axiosInstance.post(url, fieldValues);
       } else {
-        await Axios.put(url, fieldValues);
+        await axiosInstance.put(url, fieldValues);
       }
       navigate('/reviews/');
     } catch (e) {
       setError(e);
-      colocnsole.error(e);
+      console.error(e);
     }
     setLoading(false);
   };
