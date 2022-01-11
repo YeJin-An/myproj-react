@@ -7,3 +7,5 @@ git push origin main
 cp ../../dev/react/myreact37/.eslintrc
 
 Initialize project using Create React App
+
+git reset
