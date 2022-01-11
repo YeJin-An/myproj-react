@@ -2,7 +2,7 @@ import { data } from 'autoprefixer';
 import { useState, useEffect } from 'react';
 import './Clock.css';
 
-const WEEKDAYS = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SET', 'SUN'];
+const WEEKDAYS = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 
 function Clock() {
   const [date, setDate] = useState(new Date());
@@ -21,10 +21,13 @@ function Clock() {
 
       <div class="clock">
         <p class="date">
-          {data.getMonth() + 1} - {data.getDate()}-{WEEKDAYS[data.getDay()]}
+          {date.getFullYear()} - {date.getMonth() + 1} - {date.getDate()}{' '}
+          {WEEKDAYS[date.getDay()]}
         </p>
-        <p class="time">{date.toISOString().slice(11, 19)}</p>
-        <p class="text">Powered by React.js</p>
+        {/* <p class="time">{date.toISOString().slice(11, 19)}</p> */}
+        <p class="text">
+          {date.getHours}:{date.getMinutes()}:{date.getSeconds}
+        </p>
       </div>
     </div>
   );
