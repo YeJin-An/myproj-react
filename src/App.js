@@ -8,6 +8,8 @@ import Components from 'pages/examples/Components';
 import PageBlog from './pages/PageBlog';
 import './App.css';
 import Clock from 'pages/examples/Clock';
+import CssModule from 'pages/examples/CssMoudle';
+import CssInJs from 'pages/examples/CssinJs';
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
         <Route path="/reviews/:reviewId/edit/" element={<ReviewForm />} />
         <Route path="/examples/components/" element={<Components />} />
         <Route path="/examples/clock/" element={<Clock />} />
+        <Route path="/examples/css-module/" element={<CssModule />} />
+        <Route path="/examples/cssinjs/" element={<CssInJs />} />
       </Routes>
     </div>
   );
