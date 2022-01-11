@@ -1,7 +1,7 @@
 // https://tailwind-elements.com/docs/standard/components/alerts/
 
 import Check from './icons/Check';
-import Ex from './icons/Ex';
+import Ex from './Ex';
 import Info from './icons/Info';
 
 const MAPPING = {

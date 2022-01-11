@@ -1,11 +1,11 @@
 import { Navigate, Routes, Route } from 'react-router-dom';
-import Profile from './pages/accounts/Profile';
-import ReviewList from './pages/accounts/reviews/ReviewList';
-import Login from './pages/accounts/Login';
-import TopNav from './components/TopNav';
-import ReviewForm from './pages/reviews/ReviewForm';
-import Components from './pages/examples/Components';
-import PageBlog from './pages/blog/PageBlog';
+import Profile from 'pages/accounts/Profile';
+import ReviewList from 'pages/accounts/reviews/ReviewList';
+import Login from 'pages/accounts/Login';
+import TopNav from 'components/TopNav';
+import ReviewForm from './components/ReviewForm';
+import Components from 'pages/examples/Components';
+import PageBlog from './pages/PageBlog';
 import './App.css';
 
 function App() {
