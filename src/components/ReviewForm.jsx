@@ -2,7 +2,13 @@
 // handleFieldChange : 각 필드 값이 변화 시에 호출
 // handleSubmit : 인자없는 함수. submit 시에 호출.
 
-function ReviewForm({ fieldValues, handleFieldChange, handleSubmit, loading }) {
+function ReviewForm({
+  fieldValues,
+  errorMessages,
+  handleFieldChange,
+  handleSubmit,
+  loading,
+}) {
   const handleClickedSubmitButton = () => {
     if (handleSubmit) {
       handleSubmit();
