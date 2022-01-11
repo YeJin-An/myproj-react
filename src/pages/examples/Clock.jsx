@@ -1,6 +1,6 @@
-import { data } from 'autoprefixer';
 import { useState, useEffect } from 'react';
 import './Clock.css';
+import useCurrentTime from './useCurrentTime';
 
 const WEEKDAYS = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 
