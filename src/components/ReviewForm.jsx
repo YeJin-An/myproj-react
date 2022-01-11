@@ -29,6 +29,7 @@ function ReviewForm({ fieldValues, handleFieldChange, handleSubmit, loading }) {
           <option>4</option>
           <option>5</option>
         </select>
+        <div className="text-red-400">{errorMessages.score}</div>
       </div>
       <div>
         <textarea
@@ -38,6 +39,7 @@ function ReviewForm({ fieldValues, handleFieldChange, handleSubmit, loading }) {
           className="bg-gray-100 border border-gray-400"
           disabled={loading}
         />
+        <div className="text-red-400">{errorMessages.content}</div>
       </div>
       <div>
         <button

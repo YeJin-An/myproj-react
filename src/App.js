@@ -10,6 +10,7 @@ import './App.css';
 import Clock from 'pages/examples/Clock';
 import CssModule from 'pages/examples/CssMoudle';
 import CssInJs from 'pages/examples/CssinJs';
+import ContextApiSample from 'pages/examples/ContextApiSample';
 
 function App() {
   return (
@@ -27,6 +28,10 @@ function App() {
         <Route path="/examples/clock/" element={<Clock />} />
         <Route path="/examples/css-module/" element={<CssModule />} />
         <Route path="/examples/cssinjs/" element={<CssInJs />} />
+        <Route
+          path="/examples/contextapisample/"
+          element={<ContextApiSample />}
+        />
       </Routes>
     </div>
   );
