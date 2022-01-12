@@ -18,4 +18,4 @@ git pull
 
 git reset
 
-git checkout -b '...'
+git checkout -b ''
