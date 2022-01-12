@@ -34,6 +34,9 @@ function TopNav() {
         <li>
           <MyLink to="/examples/contextapisample2/">contenxtapisample2</MyLink>
         </li>
+        <li>
+          <MyLink to="/news/">news</MyLink>
+        </li>
       </ul>
     </div>
   );
