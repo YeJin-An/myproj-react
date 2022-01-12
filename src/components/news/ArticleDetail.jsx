@@ -21,7 +21,6 @@ function ArticleDetail({ articleId }) {
       <Link tp="/news/">목록으로</Link>
       <Link to={`/news/${articleId}/edit/`}></Link>
       </dir>
-      
     </dir>
   );
 }

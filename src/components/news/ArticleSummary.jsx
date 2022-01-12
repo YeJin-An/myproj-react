@@ -3,7 +3,7 @@ function ArticleSummary({ article }) {
     <>
       <div>
         요약:
-        <Link>{article.title}</Link>
+        <Link to={`/news/${article.id}/`}>{article.title}</Link>
       </div>
     </>
   );
