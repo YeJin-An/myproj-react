@@ -8,5 +8,4 @@ function ArticleSummary({ article }) {
     </>
   );
 }
-
 export default ArticleSummary;

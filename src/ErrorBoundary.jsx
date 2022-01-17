@@ -8,7 +8,7 @@ class ErrorBoundary extends React.Component {
 
   // 다음 렌더링에서 폴백 UI가 보이도록 상태를 업데이트 합니다.
   static getDerivedStateFromError(error) {
-    return { error };
+    return { error: error };
   }
 
   // 에러 리포팅 서비스에 에러를 기록할 수도 있습니다.
